@@ -20,7 +20,7 @@ const duoClient = new Client({
   clientId: process.env.DUO_CLIENT_ID,
   clientSecret: process.env.DUO_CLIENT_SECRET,
   apiHost: process.env.DUO_HOST,
-  redirectUrl: "http://localhost:8000/redirect",
+  redirectUrl: "https://explorehub-backend.vercel.app/redirect",
 });
 
 app.use(
@@ -322,7 +322,9 @@ passport.use(
     }
   )
 );
-
+app.get("/test",(req,res)=>{
+  return res.json({message:"working"})
+})
 app.post("/duo-auth", async (req, res) => {
   const username = req.body.username;
   console.log("username coming for duo from client", username);
