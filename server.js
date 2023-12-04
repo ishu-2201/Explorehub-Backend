@@ -19,7 +19,7 @@ dotenv.config();
 let DUO_CLIENT_ID="DIIHLJ3ORFZ9KJRHRM8E"
 let DUO_CLIENT_SECRET="UUn6NjUwaE9im7ktXTJdqcX9m6PwJLa41Rv4fCf2"
 let DUO_HOST="api-09973da8.duosecurity.com"
-let MONGO_ATLAS_URL="mongodb+srv://ishaanpuri2201:Msdhoni%7@cluster0.2sdiiru.mongodb.net/?retryWrites=true&w=majority"
+let MONGO_ATLAS_URL="mongodb+srv://ishu_2201:kuljesh%407@cluster0.yxtl7.mongodb.net/?retryWrites=true&w=majority"
 let ADMIN_EMAIL="ishaanpuri2201@gmail.com"
 let ADMIN_PASSWORD="Msdhoni@7"
 let EMAIL_ID="ishaanpuri2201@gmail.com"
@@ -266,12 +266,12 @@ app.post("/login", passport.authenticate("local-login"), (req, res, next) => {
 });
 app.post("/admin-login", (req, res) => {
   if (
-    req.body.adminEmail === process.env.ADMIN_EMAIL &&
-    req.body.adminPassword === process.env.ADMIN_PASSWORD
+    req.body.adminEmail === ADMIN_EMAIL &&
+    req.body.adminPassword === ADMIN_PASSWORD
   ) {
     jwt.sign(
       { user: req.body },
-      process.env.JWT_SECRET,
+     JWT_SECRET,
       { expiresIn: "1h" },
       (err, token) => {
         if (err) {
@@ -314,7 +314,7 @@ passport.use(
   new JwtStrategy(
     {
       jwtFromRequest: ExtractJwt.fromHeader("authorization"),
-      secretOrKey: process.env.JWT_SECRET,
+      secretOrKey: JWT_SECRET,
     },
     (jwtPayload, done) => {
       //   console.log(jwtPayload);
@@ -369,8 +369,8 @@ app.post("/reset-password", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: MAIL_ID,
-      pass: MAIL_PASSWORD,
+      user: EMAIL_ID,
+      pass: EMAIL_PASSWORD,
     },
   });
 
@@ -379,7 +379,7 @@ app.post("/reset-password", (req, res) => {
   const OTP = generateOTP();
 
   const mailOptions = {
-    from: MAIL_ID,
+    from: EMAIL_ID,
     to: email,
     subject: "OTP Verification",
     text: `Your OTP for verification is: ${OTP}`,
