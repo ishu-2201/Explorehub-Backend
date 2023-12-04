@@ -19,7 +19,7 @@ dotenv.config();
 let DUO_CLIENT_ID="DIIHLJ3ORFZ9KJRHRM8E"
 let DUO_CLIENT_SECRET="UUn6NjUwaE9im7ktXTJdqcX9m6PwJLa41Rv4fCf2"
 let DUO_HOST="api-09973da8.duosecurity.com"
-let MONGO_ATLAS_URL="mongodb+srv://ishu_2201:kuljesh%407@cluster0.yxtl7.mongodb.net/?retryWrites=true&w=majority"
+let MONGO_ATLAS_URL="http://mongo_atlas_url=mongodb+srv/pushkar14patil:Pushka%40050102@cluster0.pp0gjg6.mongodb.net/travelDB?retryWrites=true&w=majority"
 let ADMIN_EMAIL="ishaanpuri2201@gmail.com"
 let ADMIN_PASSWORD="Msdhoni@7"
 let EMAIL_ID="ishaanpuri2201@gmail.com"
