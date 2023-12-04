@@ -16,10 +16,19 @@ const { Client } = require("@duosecurity/duo_universal");
 
 dotenv.config();
 
+DUO_CLIENT_ID="DIIHLJ3ORFZ9KJRHRM8E"
+DUO_CLIENT_SECRET="UUn6NjUwaE9im7ktXTJdqcX9m6PwJLa41Rv4fCf2"
+DUO_HOST="api-09973da8.duosecurity.com"
+MONGO_ATLAS_URL="mongodb+srv://ishaanpuri2201:Msdhoni%7@cluster0.2sdiiru.mongodb.net/?retryWrites=true&w=majority"
+ADMIN_EMAIL="ishaanpuri2201@gmail.com"
+ADMIN_PASSWORD="Msdhoni@7"
+EMAIL_ID="ishaanpuri2201@gmail.com"
+EMAIL_PASSWORD="dkyx rmre nlqk oeog"
+JWT_SECRET="jifaj89UGfe9V"
 const duoClient = new Client({
-  clientId: process.env.DUO_CLIENT_ID,
-  clientSecret: process.env.DUO_CLIENT_SECRET,
-  apiHost: process.env.DUO_HOST,
+  clientId: DUO_CLIENT_ID,
+  clientSecret: DUO_CLIENT_SECRET,
+  apiHost: DUO_HOST,
   redirectUrl: "https://explorehub-backend.vercel.app/redirect",
 });
 
@@ -37,7 +46,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
 dotenv.config();
-const url = process.env.MONGO_ATLAS_URL;
+const url = MONGO_ATLAS_URL;
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const userSchema = new mongoose.Schema({
@@ -234,7 +243,7 @@ app.post("/login", passport.authenticate("local-login"), (req, res, next) => {
   // login
   jwt.sign(
     { user: req.body },
-    process.env.JWT_SECRET,
+    JWT_SECRET,
     { expiresIn: "1h" },
     (err, token) => {
       if (err) {
@@ -360,8 +369,8 @@ app.post("/reset-password", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.MAIL_ID,
-      pass: process.env.MAIL_PASSWORD,
+      user: MAIL_ID,
+      pass: MAIL_PASSWORD,
     },
   });
 
@@ -370,7 +379,7 @@ app.post("/reset-password", (req, res) => {
   const OTP = generateOTP();
 
   const mailOptions = {
-    from: process.env.MAIL_ID,
+    from: MAIL_ID,
     to: email,
     subject: "OTP Verification",
     text: `Your OTP for verification is: ${OTP}`,
