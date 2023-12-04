@@ -331,8 +331,8 @@ passport.use(
     }
   )
 );
-app.get("/test",(req,res)=>{
-  return res.json({message:"working"})
+app.get("/",(req,res)=>{
+  res.send("Hello EC2 is Working")
 })
 app.post("/duo-auth", async (req, res) => {
   const username = req.body.username;
