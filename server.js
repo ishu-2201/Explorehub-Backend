@@ -16,15 +16,15 @@ const { Client } = require("@duosecurity/duo_universal");
 
 dotenv.config();
 
-DUO_CLIENT_ID="DIIHLJ3ORFZ9KJRHRM8E"
-DUO_CLIENT_SECRET="UUn6NjUwaE9im7ktXTJdqcX9m6PwJLa41Rv4fCf2"
-DUO_HOST="api-09973da8.duosecurity.com"
-MONGO_ATLAS_URL="mongodb+srv://ishaanpuri2201:Msdhoni%7@cluster0.2sdiiru.mongodb.net/?retryWrites=true&w=majority"
-ADMIN_EMAIL="ishaanpuri2201@gmail.com"
-ADMIN_PASSWORD="Msdhoni@7"
-EMAIL_ID="ishaanpuri2201@gmail.com"
-EMAIL_PASSWORD="dkyx rmre nlqk oeog"
-JWT_SECRET="jifaj89UGfe9V"
+let DUO_CLIENT_ID="DIIHLJ3ORFZ9KJRHRM8E"
+let DUO_CLIENT_SECRET="UUn6NjUwaE9im7ktXTJdqcX9m6PwJLa41Rv4fCf2"
+let DUO_HOST="api-09973da8.duosecurity.com"
+let MONGO_ATLAS_URL="mongodb+srv://ishaanpuri2201:Msdhoni%7@cluster0.2sdiiru.mongodb.net/?retryWrites=true&w=majority"
+let ADMIN_EMAIL="ishaanpuri2201@gmail.com"
+let ADMIN_PASSWORD="Msdhoni@7"
+let EMAIL_ID="ishaanpuri2201@gmail.com"
+let EMAIL_PASSWORD="dkyx rmre nlqk oeog"
+let JWT_SECRET="jifaj89UGfe9V"
 const duoClient = new Client({
   clientId: DUO_CLIENT_ID,
   clientSecret: DUO_CLIENT_SECRET,
