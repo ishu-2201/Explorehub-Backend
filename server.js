@@ -16,9 +16,9 @@ const { Client } = require("@duosecurity/duo_universal");
 
 dotenv.config();
 
-let DUO_CLIENT_ID="DIIHLJ3ORFZ9KJRHRM8E"
-let DUO_CLIENT_SECRET="UUn6NjUwaE9im7ktXTJdqcX9m6PwJLa41Rv4fCf2"
-let DUO_HOST="api-09973da8.duosecurity.com"
+let DUO_CLIENT_ID="DI5T6JXVULNB1IPMN11K"
+let DUO_CLIENT_SECRET="Ocab4H2UVxuv6aXdhlEHuS8A8Z1h4mzEKrDQ8QCS"
+let DUO_HOST="api-fcd8edae.duosecurity.com"
 let MONGO_ATLAS_URL="http://mongo_atlas_url=mongodb+srv/pushkar14patil:Pushka%40050102@cluster0.pp0gjg6.mongodb.net/travelDB?retryWrites=true&w=majority"
 let ADMIN_EMAIL="ishaanpuri2201@gmail.com"
 let ADMIN_PASSWORD="Msdhoni@7"
