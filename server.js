@@ -29,7 +29,7 @@ const duoClient = new Client({
   clientId: DUO_CLIENT_ID,
   clientSecret: DUO_CLIENT_SECRET,
   apiHost: DUO_HOST,
-  redirectUrl: "https://explorehub-backend.vercel.app/redirect",
+  redirectUrl: "https://ec2-34-226-203-175.compute-1.amazonaws.com:8000/redirect",
 });
 
 app.use(
